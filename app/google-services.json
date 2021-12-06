@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "773525215619",
+    "project_id": "homemadeproductssale",
+    "storage_bucket": "homemadeproductssale.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773525215619:android:af58229b7ce5da24a47eb6",
+        "android_client_info": {
+          "package_name": "com.example.homemadeproductssale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "773525215619-denmnn6ommic9ap8s40t9ucjnmpducsi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNgjIsYdMyHaFdqX4WVr5Z9bZjMbm3fwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "773525215619-denmnn6ommic9ap8s40t9ucjnmpducsi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

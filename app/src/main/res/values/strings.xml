@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">HomemadeProductsSale</string>
+    <string name="title_app">Homemade Product Sale App</string>
+    <string name="create_acc">Create Account</string>
+    <string name="name">FULL NAME</string>
+    <string name="email">EMAIL</string>
+    <string name="password">PASSWORD</string>
+    <string name="phone">PHONE</string>
+    <string name="register_button">REGISTER</string>
+    <string name="login_button">LOGIN</string>
+    <string name="go_to_login">ALREADY REGISTERED?LOGIN HERE</string>
+    <string name="go_to_register">NEW HERE?CREATE ACCOUNT</string>
 </resources>
