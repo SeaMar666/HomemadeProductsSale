@@ -1,23 +1,35 @@
 package com.example.homemadeproductssale.Fragments;
 
+import android.app.ActionBar;
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.homemadeproductssale.MainActivity;
 import com.example.homemadeproductssale.R;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 
@@ -29,8 +41,13 @@ public class HomeFragment extends Fragment {
         ViewPager viewPager = rootView.findViewById(R.id.pager);
         setupViewPager(viewPager);
 
+        Toolbar toolbar = rootView.findViewById(R.id.toolbar);
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        activity.setSupportActionBar(toolbar);
+
         TabLayout tabLayout = rootView.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
         return rootView;
     }
 
@@ -84,10 +101,11 @@ public class HomeFragment extends Fragment {
                     return getString(R.string.homemade_tab);
                 case 1:
                     return getString(R.string.handmade_tab);
-
             }
             return null;
         }
-
     }
+
+
+
 }
