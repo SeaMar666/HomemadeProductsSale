@@ -125,7 +125,7 @@ public class ProfileFragment extends Fragment implements NavigationView.OnNaviga
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getContext(), LoginActivity.class));
+                intent = new Intent(getContext(), LoginActivity.class);
                 break;
             case R.id.nav_language:
                 showChangeLanguageDialog();

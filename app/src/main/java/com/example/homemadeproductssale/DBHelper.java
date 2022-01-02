@@ -1,14 +1,16 @@
 package com.example.homemadeproductssale;
 
 import android.annotation.SuppressLint;
-import android.app.people.PeopleManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import com.example.homemadeproductssale.Model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,34 +35,12 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public Product getProduct(long id){
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        Cursor cursor = db.query(Product.tableName,
-                new String[]{Product.ID, Product.NAME, Product.PRICE, Product.IMAGE},
-                Product.ID + "=?",
-                new String[]{String.valueOf(id)}, null, null, null, null);
-
-        if(cursor != null)
-            cursor.moveToFirst();
-
-            @SuppressLint("Range") Product product = new Product(
-                cursor.getInt(cursor.getColumnIndex(Product.ID)),
-                cursor.getInt(cursor.getColumnIndex(Product.IMAGE)),
-                cursor.getString(cursor.getColumnIndex(Product.NAME)),
-                cursor.getInt(cursor.getColumnIndex(Product.PRICE)));
-
-        cursor.close();
-
-        return product;
-    }
-
     @SuppressLint("Range")
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
 
-        List<Product> products= new ArrayList<>();
+        List<Product> products = new ArrayList<>();
 
-        String selectQuery= "SELECT * FROM " + Product.tableName;
+        String selectQuery = "SELECT * FROM " + Product.tableName;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -75,15 +55,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
                 products.add(product);
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
 
         db.close();
         return products;
     }
 
-    public boolean insertProduct(String name, int price, int image)
-    {
+    public boolean insertProduct(String name, int price, int image) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
@@ -92,12 +71,57 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(Product.IMAGE, image);
         long id = db.insert(Product.tableName, null, values);
 
-        if(id == -1){
+        if (id == -1) {
             return false;
-        }else
+        } else
             return true;
+    }
 
+    public void addProduct(String name, int price, int image){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(Product.NAME, name);
+        values.put(Product.PRICE, price);
+        values.put(Product.IMAGE, image);
+
+        db.insert(Product.tableName,null,values);
+        Log.d("Check", name + ", price - "+price+" - . " + values);
 
     }
+
+    public void swapCursor(Cursor newCursor) {
+        String selectQuery = "SELECT * FROM " + Product.tableName;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor != null) {
+            cursor.close();
+        }
+
+        cursor = newCursor;
+
+        if (newCursor != null) {
+            notifyAll();
+        }
+    }
+
+    public void removeProduct(long id) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(Product.tableName, Product.ID + "=" + id, null);
+        swapCursor((Cursor) getAllProducts());
+    }
+
+    public void deleteProduct(){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Product.tableName,null,null);
+        db.execSQL("delete from "+ Product.tableName);
+        db.close();
+
+    }
+
+
 
 }

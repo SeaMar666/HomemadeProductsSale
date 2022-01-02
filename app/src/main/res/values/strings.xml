@@ -10,6 +10,7 @@
     <string name="login_button">LOGIN</string>
     <string name="go_to_login">ALREADY REGISTERED?LOGIN HERE</string>
     <string name="go_to_register">NEW HERE?CREATE ACCOUNT</string>
+    <string name="product_comment">Product Comments</string>
 
     <string name="homemade_tab">Homemade Products</string>
     <string name="handmade_tab">Handmade Products</string>

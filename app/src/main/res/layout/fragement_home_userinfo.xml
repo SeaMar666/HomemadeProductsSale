@@ -22,7 +22,10 @@
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_margin="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/rectangle"
                 android:padding="3dp"
@@ -94,6 +97,7 @@
                     android:textSize="13sp" />
 
                 <TextView
+                    android:id="@+id/emailTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"

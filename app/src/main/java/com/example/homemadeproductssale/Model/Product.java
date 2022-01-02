@@ -1,4 +1,4 @@
-package com.example.homemadeproductssale;
+package com.example.homemadeproductssale.Model;
 
 public class Product {
 
@@ -23,6 +23,7 @@ public class Product {
         this.image = image;
         this.name = name;
         this.price = price;
+
     }
 
     public Product(){}
