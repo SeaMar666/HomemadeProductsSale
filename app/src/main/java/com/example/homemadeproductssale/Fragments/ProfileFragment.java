@@ -10,9 +10,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,8 +23,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.homemadeproductssale.LoginActivity;
-import com.example.homemadeproductssale.NavigationDrawer.Fragements.BoughtFragment;
+import com.example.homemadeproductssale.NavigationDrawer.Activities.AboutAppFragment;
+import com.example.homemadeproductssale.NavigationDrawer.Activities.VotesActivity;
 import com.example.homemadeproductssale.NavigationDrawer.Fragements.HomeUserInfoFragment;
+import com.example.homemadeproductssale.NavigationDrawer.Fragements.NotificationFragment;
+import com.example.homemadeproductssale.NavigationDrawer.Fragements.QuestionsFragment;
+import com.example.homemadeproductssale.NavigationDrawer.Fragements.TravelDistanceFragment;
 import com.example.homemadeproductssale.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -60,17 +61,16 @@ public class ProfileFragment extends Fragment implements NavigationView.OnNaviga
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
         Fragment fragment = new HomeUserInfoFragment();
         FragmentTransaction ft = getChildFragmentManager().beginTransaction();
         ft.add(R.id.fragment_container, fragment);
         ft.commit();
 
-
-
         return rootView;
     }
 
-    private  void showChangeLanguageDialog(){
+    private void showChangeLanguageDialog(){
         final String[] listItems = {"Turkish", "Spanish", "English"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
         mBuilder.setTitle("Choose Language...");
@@ -132,9 +132,23 @@ public class ProfileFragment extends Fragment implements NavigationView.OnNaviga
             case R.id.nav_settings:
                 intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
                 startActivityForResult(intent, 1);
-            default:
-                fragment = new BoughtFragment();
-
+            case R.id.nav_travel:
+                intent = new Intent(getContext(), TravelDistanceFragment.class);
+                break;
+            case R.id.nav_questions:
+                fragment = new QuestionsFragment();
+                break;
+            case R.id.nav_info:
+                fragment = new AboutAppFragment();
+                break;
+            case R.id.nav_share:
+                intent = new Intent(getContext(), VotesActivity.class);
+                break;
+            case R.id.nav_remember:
+                fragment = new NotificationFragment();
+                break;
+                default:
+                 intent = new Intent(getContext(), VotesActivity.class);
         }
 
         if(fragment != null){

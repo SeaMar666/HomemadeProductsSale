@@ -49,13 +49,5 @@
         android:orientation="horizontal">
 
 
-        <Button
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="top|right"
-            android:background="@drawable/ic_baseline_favorite_24"
-            android:shadowColor="#9F0838"
-            app:rippleColor="#CD1B54" />
-
     </LinearLayout>
 </androidx.cardview.widget.CardView>

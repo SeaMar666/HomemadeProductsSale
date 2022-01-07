@@ -1,6 +1,9 @@
 package com.example.homemadeproductssale.Model;
 
-public class Product {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Product{
 
     public static final String tableName = "Product";
 
@@ -12,21 +15,15 @@ public class Product {
     public int id, image, price;
     public String name;
 
-    public static final String CREATE_TABLE = "CREATE TABLE " + tableName + "(" +
-            ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            NAME + " TEXT, " +
-            PRICE + " TEXT, " +
-            IMAGE + " BLOB )";
-
-    public Product(int id, int image, String name, int price) {
-        this.id = id;
-        this.image = image;
-        this.name = name;
-        this.price = price;
-
-    }
-
     public Product(){}
+
+
+    protected Product(Parcel in) {
+        id = in.readInt();
+        image = in.readInt();
+        price = in.readInt();
+        name = in.readString();
+    }
 
     public int getId() {
         return id;

@@ -7,23 +7,23 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_baseline_home_24"
-            android:title="Home Page" />
+            android:title="Your Profile" />
         <item
-            android:id="@+id/nav_bought"
-            android:icon="@drawable/ic_baseline_shopping_basket_24"
-            android:title="What You Bought" />
+            android:id="@+id/nav_travel"
+            android:icon="@drawable/ic_baseline_location_city_24"
+            android:title="How far have you traveled?" />
         <item
-            android:id="@+id/nav_coupons"
+            android:id="@+id/nav_remember"
             android:icon="@drawable/ic_baseline_note_24"
-            android:title="Coupons" />
+            android:title="Reminder For You" />
         <item
             android:id="@+id/nav_questions"
             android:icon="@drawable/ic_baseline_question_answer_24"
-            android:title="Questions" />
+            android:title="Frequently asked questions" />
         <item
-            android:id="@+id/nav_votes"
+            android:id="@+id/nav_share"
             android:icon="@drawable/ic_baseline_how_to_vote_24"
-            android:title="Votes" />
+            android:title="Share Content From Outside" />
         <item
             android:id="@+id/nav_language"
             android:icon="@drawable/ic_baseline_language_24"

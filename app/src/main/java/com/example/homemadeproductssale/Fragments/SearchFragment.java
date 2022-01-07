@@ -1,6 +1,5 @@
 package com.example.homemadeproductssale.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +14,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.homemadeproductssale.Adapters.ProductsAdapter;
-import com.example.homemadeproductssale.ProductPageActivity;
 import com.example.homemadeproductssale.R;
 import com.google.android.material.tabs.TabLayout;
 

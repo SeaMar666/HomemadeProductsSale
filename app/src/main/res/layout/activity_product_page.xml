@@ -9,26 +9,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/productToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayoutProduct"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayoutProduct"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/grad"
         android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -37,13 +34,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/rectangle_border">
 
             <ImageView
-                android:id="@+id/product_image"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
+                android:id="@+id/product_image2"
+                android:layout_width="330dp"
+                android:layout_height="180dp"
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="9dp"
@@ -57,12 +54,12 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/product_name"
+            android:id="@+id/product_name2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/productImage"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="10sp"
             android:fontFamily="sans-serif-light"
             android:text="PRODUCT NAME"
             android:textColor="@color/white"
@@ -72,7 +69,7 @@
             android:id="@+id/product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/product_name"
+            android:layout_below="@+id/product_name2"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-light"
             android:text="MONEY"
@@ -80,15 +77,6 @@
             android:textColor="@color/address"
             android:textSize="14sp" />
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_baseline_share_24" />
 
     </RelativeLayout>
 
@@ -96,14 +84,134 @@
         android:id="@+id/textView3"
         android:layout_width="219dp"
         android:layout_height="43dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="38dp"
         android:fontFamily="sans-serif-light"
         android:text="@string/product_comment"
-        android:textColor="#470ECC"
+        android:textColor="#5A19F3"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutProduct" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayoutProduct"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:layout_marginStart="400dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="128dp"
+            android:src="@drawable/ic_baseline_favorite_24"
+            app:backgroundTint="@color/gradStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_image"
+            app:layout_constraintVertical_bias="0.883" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/productToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/purple_500"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="251dp"
+            android:layout_marginTop="400dp"
+            android:layout_marginBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/post_detail_comment"
+                    android:layout_width="179dp"
+                    android:layout_height="61dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/edittext_button_style_rounded"
+                    android:ems="10"
+                    android:hint="Write Comment"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <Button
+                    android:id="@+id/post_detail_add_comment_btn"
+                    android:layout_width="102dp"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="112dp"
+                    android:background="@drawable/edittext_button_style_rounded"
+                    android:backgroundTint="@color/purple_200"
+                    android:text="Add"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/post_detail_delete_comment_btn"
+                    android:layout_width="102dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginEnd="56dp"
+                    android:background="@drawable/edittext_button_style_rounded"
+                    android:backgroundTint="@color/purple_200"
+                    android:text="Delete"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:onClick="deleteTasks"/>
+
+                <Button
+                    android:id="@+id/post_detail_update_comment_btn"
+                    android:layout_width="102dp"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/edittext_button_style_rounded"
+                    android:backgroundTint="@color/purple_200"
+                    android:text="Update"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ListView
+                    android:id="@+id/listviewComment"
+                    android:layout_width="381dp"
+                    android:layout_height="182dp"
+                    android:layout_marginTop="10dp"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_detail_comment" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

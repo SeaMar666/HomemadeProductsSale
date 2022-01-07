@@ -18,4 +18,13 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="company_name">SAFE PRODUCTS</string>
+    <string name="restaurant_image">Restaurant image</string>
+    <string name="home_text">Since we opened our doors in 2017, SAFE PRODUCTS
+        has built its reputation as one of America’s best homemade product sale app.. We believe that
+        good products is best enjoyed while staring at your phone.</string>
+
+    <string name="permission_denied">Location permission required</string>
+
+
 </resources>

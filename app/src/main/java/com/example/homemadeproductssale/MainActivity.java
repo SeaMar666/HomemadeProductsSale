@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.homemadeproductssale.Fragments.BasketFragment;
-import com.example.homemadeproductssale.Fragments.FavoritesFragment;
 import com.example.homemadeproductssale.Fragments.HomeFragment;
 import com.example.homemadeproductssale.Fragments.ProfileFragment;
 import com.example.homemadeproductssale.Fragments.SearchFragment;
@@ -43,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.nav_search:
                             selectedFragment = new SearchFragment();
-                            break;
-                        case R.id.nav_fav:
-                            selectedFragment = new FavoritesFragment();
                             break;
                         case R.id.nav_basket:
                             selectedFragment = new BasketFragment();
