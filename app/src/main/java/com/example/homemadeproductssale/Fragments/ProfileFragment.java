@@ -23,12 +23,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.homemadeproductssale.LoginActivity;
-import com.example.homemadeproductssale.NavigationDrawer.Activities.AboutAppFragment;
-import com.example.homemadeproductssale.NavigationDrawer.Activities.VotesActivity;
+import com.example.homemadeproductssale.NavigationDrawer.Fragements.AboutAppFragment;
 import com.example.homemadeproductssale.NavigationDrawer.Fragements.HomeUserInfoFragment;
 import com.example.homemadeproductssale.NavigationDrawer.Fragements.NotificationFragment;
 import com.example.homemadeproductssale.NavigationDrawer.Fragements.QuestionsFragment;
-import com.example.homemadeproductssale.NavigationDrawer.Fragements.TravelDistanceFragment;
+import com.example.homemadeproductssale.NavigationDrawer.Fragements.TravelDistanceActivity;
 import com.example.homemadeproductssale.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -71,7 +70,7 @@ public class ProfileFragment extends Fragment implements NavigationView.OnNaviga
     }
 
     private void showChangeLanguageDialog(){
-        final String[] listItems = {"Turkish", "Spanish", "English"};
+        final String[] listItems = {"Turkish", "English"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
         mBuilder.setTitle("Choose Language...");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -79,10 +78,6 @@ public class ProfileFragment extends Fragment implements NavigationView.OnNaviga
             public void onClick(DialogInterface dialogInterface, int i) {
                 if(i == 0){
                     setLocale("Tr");
-                    getActivity().recreate();
-                }
-                else if(i == 0){
-                    setLocale("Spn");
                     getActivity().recreate();
                 }
                 else if(i == 0){
@@ -132,8 +127,9 @@ public class ProfileFragment extends Fragment implements NavigationView.OnNaviga
             case R.id.nav_settings:
                 intent = new Intent(android.provider.Settings.ACTION_SETTINGS);
                 startActivityForResult(intent, 1);
+                break;
             case R.id.nav_travel:
-                intent = new Intent(getContext(), TravelDistanceFragment.class);
+                intent = new Intent(getContext(), TravelDistanceActivity.class);
                 break;
             case R.id.nav_questions:
                 fragment = new QuestionsFragment();
@@ -141,14 +137,11 @@ public class ProfileFragment extends Fragment implements NavigationView.OnNaviga
             case R.id.nav_info:
                 fragment = new AboutAppFragment();
                 break;
-            case R.id.nav_share:
-                intent = new Intent(getContext(), VotesActivity.class);
-                break;
             case R.id.nav_remember:
                 fragment = new NotificationFragment();
                 break;
                 default:
-                 intent = new Intent(getContext(), VotesActivity.class);
+                    fragment = new HomeUserInfoFragment();
         }
 
         if(fragment != null){

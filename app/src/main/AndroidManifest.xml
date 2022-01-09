@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     package="com.example.homemadeproductssale">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,9 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HomemadeProductsSale">
-        TravelDistanceFragment
         <activity
-            android:name=".NavigationDrawer.Fragements.TravelDistanceFragment"
+            android:name=".NavigationDrawer.Fragements.TravelDistanceActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -22,16 +24,14 @@
             android:name=".ProductPageActivity"
             android:exported="false" />
         <activity
+            android:name=".AddIdeaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
-        <activity android:name=".NavigationDrawer.Activities.VotesActivity"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".RegisterActivity"
             android:exported="true">
@@ -40,6 +40,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".OdometerService"
+            android:enabled="true"
+            android:exported="false"></service>
 
         <meta-data
             android:name="preloaded_fonts"

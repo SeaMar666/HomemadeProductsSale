@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/productImage"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="10sp"
+            android:layout_marginTop="-9dp"
             android:fontFamily="sans-serif-light"
             android:text="PRODUCT NAME"
             android:textColor="@color/white"
@@ -75,7 +75,7 @@
             android:text="MONEY"
             android:textAllCaps="true"
             android:textColor="@color/address"
-            android:textSize="14sp" />
+            android:textSize="20sp" />
 
 
     </RelativeLayout>
@@ -100,7 +100,9 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -128,9 +130,9 @@
             android:layout_height="45dp"
             android:background="@color/purple_500"
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            app:layout_scrollFlags="scroll|enterAlways"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
         <ScrollView
@@ -150,7 +152,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/edittext_button_style_rounded"
                     android:ems="10"
-                    android:hint="Write Comment"
+                    android:hint="@string/write_comment"
                     android:inputType="textPersonName"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -161,38 +163,13 @@
 
                 <Button
                     android:id="@+id/post_detail_add_comment_btn"
-                    android:layout_width="102dp"
-                    android:layout_height="38dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="112dp"
+                    android:layout_width="144dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="48dp"
                     android:background="@drawable/edittext_button_style_rounded"
                     android:backgroundTint="@color/purple_200"
                     android:text="Add"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/post_detail_delete_comment_btn"
-                    android:layout_width="102dp"
-                    android:layout_height="35dp"
-                    android:layout_marginTop="44dp"
-                    android:layout_marginEnd="56dp"
-                    android:background="@drawable/edittext_button_style_rounded"
-                    android:backgroundTint="@color/purple_200"
-                    android:text="Delete"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:onClick="deleteTasks"/>
-
-                <Button
-                    android:id="@+id/post_detail_update_comment_btn"
-                    android:layout_width="102dp"
-                    android:layout_height="38dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="4dp"
-                    android:background="@drawable/edittext_button_style_rounded"
-                    android:backgroundTint="@color/purple_200"
-                    android:text="Update"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

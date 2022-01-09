@@ -1,5 +1,6 @@
 package com.example.homemadeproductssale.Adapters;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,19 +15,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.homemadeproductssale.Fragments.BasketFragment;
 import com.example.homemadeproductssale.R;
+import com.example.homemadeproductssale.UpdateActivity;
 
 import java.util.ArrayList;
 
-public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyViewHolder> {
+public class OptionsAdapter extends RecyclerView.Adapter<OptionsAdapter.MyViewHolder> {
 
     private Context context;
     private Activity activity;
-    private ArrayList product_id, product_name;
+    private ArrayList product_id,product_price, product_name;
 
-    public FavoritesAdapter(Activity activity, Context context, ArrayList product_id, ArrayList product_name){
+    public OptionsAdapter(Activity activity, Context context, ArrayList product_id,ArrayList product_price, ArrayList product_name){
         this.activity = activity;
         this.context = context;
         this.product_id = product_id;
+        this.product_price = product_price;
         this.product_name = product_name;
     }
 
@@ -38,18 +41,21 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
         return new MyViewHolder(view);
     }
 
-
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+
+        holder.product_price.setText(String.valueOf(product_price.get(position)));
         holder.product_idTxt.setText(String.valueOf(product_id.get(position)));
         holder.product_titleTxt.setText(String.valueOf(product_name.get(position)));
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, BasketFragment.class);
+                Intent intent = new Intent(context, UpdateActivity.class);
                 intent.putExtra("id", String.valueOf(product_id.get(position)));
                 intent.putExtra("name", String.valueOf(product_name.get(position)));
+                intent.putExtra("price", String.valueOf(product_price.get(position)));
+
                 activity.startActivityForResult(intent, 1);
             }
         });
@@ -62,13 +68,14 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView product_idTxt, product_titleTxt;
+        TextView product_idTxt, product_titleTxt, product_price;
         LinearLayout mainLayout;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
             product_idTxt = itemView.findViewById(R.id.product_id_txt);
             product_titleTxt = itemView.findViewById(R.id.product_title_txt);
+            product_price = itemView.findViewById(R.id.product_price_txt);
 
             mainLayout = itemView.findViewById(R.id.mainLayout);
 

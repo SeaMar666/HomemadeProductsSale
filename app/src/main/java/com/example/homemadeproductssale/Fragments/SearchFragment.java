@@ -33,6 +33,8 @@ public class SearchFragment extends Fragment{
         Toolbar toolbar = rootView.findViewById(R.id.toolbar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(toolbar);
+        toolbar.setBackgroundColor(getResources().getColor(R.color.followingBg));
+
 
         TabLayout tabLayout = rootView.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
@@ -48,8 +50,8 @@ public class SearchFragment extends Fragment{
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFrag(new HandmadeSearchFragment(), "ONE");
-        adapter.addFrag(new HomemadeSearchFragment(), "TWO");
+        adapter.addFrag(new YourOptionsFragment(), "ONE");
+        adapter.addFrag(new OurOptionsFragment(), "TWO");
         viewPager.setAdapter(adapter);
     }
 
@@ -71,9 +73,9 @@ public class SearchFragment extends Fragment{
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return new HandmadeSearchFragment();
+                    return new YourOptionsFragment();
                 case 1:
-                    return new HomemadeSearchFragment();
+                    return new OurOptionsFragment();
             }
             return null;
         }
@@ -87,9 +89,9 @@ public class SearchFragment extends Fragment{
         public CharSequence getPageTitle(int position) {
             switch (position){
                 case 0:
-                    return getString(R.string.homemade_tab);
+                    return "Your Options";
                 case 1:
-                    return getString(R.string.handmade_tab);
+                    return "Our Options";
             }
             return null;
         }

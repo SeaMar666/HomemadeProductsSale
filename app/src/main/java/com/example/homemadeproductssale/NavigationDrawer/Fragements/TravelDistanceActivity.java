@@ -1,6 +1,7 @@
 package com.example.homemadeproductssale.NavigationDrawer.Fragements;
 
 
+import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +15,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -23,7 +23,7 @@ import com.example.homemadeproductssale.R;
 
 import java.util.Locale;
 
-public class TravelDistanceFragment extends AppCompatActivity {
+public class TravelDistanceActivity extends Activity {
 
     private OdometerService odometer;
     private boolean bound = false;
@@ -56,14 +56,14 @@ public class TravelDistanceFragment extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(TravelDistanceFragment.this,
+                if (ContextCompat.checkSelfPermission(TravelDistanceActivity.this,
                         OdometerService.PERMISSION_STRING)
                         != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(TravelDistanceFragment.this,
+                    ActivityCompat.requestPermissions(TravelDistanceActivity.this,
                             new String[]{OdometerService.PERMISSION_STRING},
                             PERMISSION_REQUEST_CODE);
                 } else {
-                    Intent intent = new Intent(TravelDistanceFragment.this, OdometerService.class);
+                    Intent intent = new Intent(TravelDistanceActivity.this, OdometerService.class);
                     bindService(intent, connection, Context.BIND_AUTO_CREATE);
                 }
             }
@@ -83,7 +83,6 @@ public class TravelDistanceFragment extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case PERMISSION_REQUEST_CODE: {
                 if (grantResults.length > 0

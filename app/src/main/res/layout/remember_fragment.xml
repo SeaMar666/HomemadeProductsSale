@@ -12,19 +12,19 @@
         android:id="@+id/titleEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title" />
+        android:hint="@string/title" />
 
     <EditText
         android:id="@+id/messageEdit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Message" />
+        android:hint="@string/message" />
 
     <Button
         android:id="@+id/sendChannel1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send on Channel 1"
+        android:text="@string/send_on_channel_1"
         android:onClick="sendOnChannel1"/>
 
 </LinearLayout>

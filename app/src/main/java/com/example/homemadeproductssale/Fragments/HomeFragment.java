@@ -52,8 +52,6 @@ public class HomeFragment extends Fragment  implements ProductsAdapter.OnProduct
         recyclerView.setLayoutManager(layoutManager);
         productsAdapter = new ProductsAdapter(this.getContext(), products, this);
         recyclerView.setAdapter(productsAdapter);
-        //productsAdapter.clear();
-        //dbHelper.deleteProduct();
 
         return rootView;
     }

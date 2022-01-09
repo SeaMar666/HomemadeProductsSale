@@ -1,12 +1,8 @@
 package com.example.homemadeproductssale;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +13,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -45,7 +40,7 @@ public class ProductPageActivity extends AppCompatActivity {
     int proPrice, proImage;
     ListView listView;
     EditText comment;
-    Button add, update;
+    Button add;
     DBHelperComment myDB;
     ArrayList<String> product_comment;
     ArrayAdapter arrayAdapter;
@@ -73,7 +68,7 @@ public class ProductPageActivity extends AppCompatActivity {
         {
             proName = getIntent().getStringExtra("productName");
             proPrice = getIntent().getIntExtra("productPrice",50 );
-            proImage = getIntent().getIntExtra("productImage", R.drawable.bg);
+            proImage = getIntent().getIntExtra("productImage", R.drawable.homemade );
 
             mName.setText(proName);
             mPrice.setText(String.valueOf(proPrice));
@@ -81,7 +76,6 @@ public class ProductPageActivity extends AppCompatActivity {
 
         }
 
-        update = findViewById(R.id.post_detail_update_comment_btn);
         listView = findViewById(R.id.listviewComment);
         product_comment = new ArrayList<>();
         comment = findViewById(R.id.post_detail_comment);
@@ -98,7 +92,6 @@ public class ProductPageActivity extends AppCompatActivity {
                 }
             }
         });
-        listViewItemLongClick();
     }
 
     public void floatActionButtonOperation(){
@@ -139,8 +132,8 @@ public class ProductPageActivity extends AppCompatActivity {
             case R.id.share:
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "Your Body Here";
-                String shareSubject = "Your Subject Here";
+                String shareBody = "Product name is " + proName;
+                String shareSubject = "Homemade Products App";
                 sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBody);
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, shareSubject);
                 startActivity(Intent.createChooser(sharingIntent, "Share using"));
@@ -174,19 +167,6 @@ public class ProductPageActivity extends AppCompatActivity {
             listView.setAdapter(arrayAdapter);
         }
     }
-    public void deleteTasks(View v){
-        myDB.deleteAll();
-        displayData();
-    }
 
-    private void listViewItemLongClick() {
-        ListView myList = findViewById(R.id.listviewComment);
-        myList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                myDB.deleteRow(id);
-                return false;
-            }
-        });
-    }
+
 }

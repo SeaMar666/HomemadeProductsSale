@@ -7,43 +7,39 @@
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_baseline_home_24"
-            android:title="Your Profile" />
+            android:title="@string/your_profile" />
         <item
             android:id="@+id/nav_travel"
             android:icon="@drawable/ic_baseline_location_city_24"
-            android:title="How far have you traveled?" />
+            android:title="@string/how_far_have_you_traveled" />
         <item
             android:id="@+id/nav_remember"
             android:icon="@drawable/ic_baseline_note_24"
-            android:title="Reminder For You" />
+            android:title="@string/reminder_for_you" />
         <item
             android:id="@+id/nav_questions"
             android:icon="@drawable/ic_baseline_question_answer_24"
-            android:title="Frequently asked questions" />
-        <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_baseline_how_to_vote_24"
-            android:title="Share Content From Outside" />
+            android:title="@string/frequently_asked_questions" />
         <item
             android:id="@+id/nav_language"
             android:icon="@drawable/ic_baseline_language_24"
-            android:title="Language" />
+            android:title="@string/language" />
     </group>
 
-    <item android:title="Application">
+    <item android:title="@string/application">
         <menu>
             <item
                 android:id="@+id/nav_info"
                 android:icon="@drawable/ic_baseline_info_24"
-                android:title="About App" />
+                android:title="@string/about_app" />
             <item
                 android:id="@+id/nav_settings"
                 android:icon="@drawable/ic_baseline_settings_24"
-                android:title="Settings" />
+                android:title="@string/settings" />
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_baseline_logout_24"
-                android:title="Logout" />
+                android:title="@string/logout" />
         </menu>
     </item>
 </menu>

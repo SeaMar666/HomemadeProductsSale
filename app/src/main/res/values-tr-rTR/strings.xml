@@ -1,31 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HomemadeProductsSale</string>
-    <string name="title_app">Homemade Product Sale App</string>
-    <string name="create_acc">Create Account</string>
-    <string name="name">FULL NAME</string>
+    <string name="app_name">Ev Yapımı Ürün Satış</string>
+    <string name="title_app">Ev Yapımı Ürün Satış Uygulaması</string>
+    <string name="create_acc">Hesap oluştur</string>
+    <string name="name">İSİM</string>
     <string name="email">EMAIL</string>
-    <string name="password">PASSWORD</string>
-    <string name="phone">PHONE</string>
-    <string name="register_button">REGISTER</string>
-    <string name="login_button">LOGIN</string>
-    <string name="go_to_login">ALREADY REGISTERED?LOGIN HERE</string>
-    <string name="go_to_register">NEW HERE?CREATE ACCOUNT</string>
-    <string name="product_comment">Product Comments</string>
+    <string name="password">ŞİFRE</string>
+    <string name="phone">TELEFON </string>
+    <string name="register_button">KAYIT OL</string>
+    <string name="login_button">GİRİŞ YAP</string>
+    <string name="go_to_login">ZATEN KAYIT OLDUNUZ MU?BURADAN GİRİŞ YAPIN</string>
+    <string name="go_to_register">BURADA YENİ MİSİN? HESAP OLUŞTUR</string>
+    <string name="product_comment">Ürün Yorumları</string>
 
-    <string name="homemade_tab">Homemade Products</string>
-    <string name="handmade_tab">Handmade Products</string>
+    <string name="company_name">GÜVENLİ ÜRÜNLER</string>
+    <string name="home_text">2017 yılında kapılarımızı açtığımızdan beri SAFE PRODUCT, Amerika\'nın en iyi ev yapımı ürün satış uygulamalarından biri olarak itibarını artırdı. İyi ürünlerin en çok telefonunuza bakarken keyif aldığına inanıyoruz.</string>
+
+
+    <string name="permission_denied">Konum izni gerekli</string>
+    <string name="product_name">Ürün İsmi</string>
+    <string name="price_of_the_product">Ürün Fiyatı</string>
+    <string name="add">Ekle</string>
+    <string name="write_comment">Yorum Yap</string>
+    <string name="update">Güncelle</string>
+    <string name="delete">Sil</string>
+    <string name="hello">Merhaba</string>
+    <string name="print_selected_items">SEÇİLMİŞ ÜRÜNLERİ GÖR</string>
+    <string name="search">Ara</string>
+    <string name="show_questions">Soruları Gör</string>
+    <string name="title">Başlık</string>
+    <string name="message">Mesaj</string>
+    <string name="send_on_channel_1">Kanala yolla</string>
+    <string name="start">Bşala</string>
+    <string name="stop">Dur</string>
+    <string name="your_profile">Profilin</string>
+    <string name="how_far_have_you_traveled">Ne kadar seyahat ettin?</string>
+    <string name="reminder_for_you">Sizin İçin Hatırlatma</string>
+    <string name="frequently_asked_questions">Sıkça Sorulan Sorular</string>
+    <string name="language">Dil Seçeneği</string>
+    <string name="application">Uygulama </string>
+    <string name="about_app">Uygulama Hakkında</string>
+    <string name="settings">Ayarlar</string>
+    <string name="logout">Çıkış Yap</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="company_name">SAFE PRODUCTS</string>
     <string name="restaurant_image">Restaurant image</string>
-    <string name="home_text">Since we opened our doors in 2017, SAFE PRODUCTS
-        has built its reputation as one of America’s best homemade product sale app.. We believe that
-        good products is best enjoyed while staring at your phone.</string>
-
-    <string name="permission_denied">Location permission required</string>
 
 
 </resources>

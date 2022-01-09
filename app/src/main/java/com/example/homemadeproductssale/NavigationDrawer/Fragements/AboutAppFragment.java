@@ -1,4 +1,4 @@
-package com.example.homemadeproductssale.NavigationDrawer.Activities;
+package com.example.homemadeproductssale.NavigationDrawer.Fragements;
 
 
 import android.content.Intent;
